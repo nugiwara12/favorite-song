@@ -67,7 +67,7 @@ export default function Home() {
       <div className="flex flex-col lg:flex-row justify-center items-center">
         <div className="flex justify-center items-center w-full mx-auto">
           <div className="flex flex-col items-center md:flex-row">
-            <div className="space-y-6">
+            <div className="relative">
               <a
                 href="#"
                 className={`flex items-start space-x-4 bg-element rounded-lg p-4 ${
@@ -250,10 +250,10 @@ export default function Home() {
                 </div>
               </a>
             </div>
-            <div className="color-element w-96 text-white flex justify-end items-end ml-4 mt-6 md:mt-0">
+            <div className="color-element w-full md:w-96 text-white flex justify-end items-end ml-4 mt-6 md:mt-0">
               <div className="flex flex-col md:flex-row items-center justify-center gap-4 p-4">
-                <div className="relative sm:order-1 rounded-l-xl overflow-hidden py-10 pl-10 max-w-xs sm:max-w-full">
-                  <video id="videoPlayer" width="490" autoPlay muted loop>
+                <div className="relative rounded-l-xl overflow-hidden py-10 px-4 max-w-xs sm:max-w-full">
+                  <video id="videoPlayer" width="100%" autoPlay muted loop>
                     <source
                       id="videoSource"
                       src="./playlist-video/playlist.mp4"
