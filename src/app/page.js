@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function Home() {
   const [activeButton, setActiveButton] = useState("description");
@@ -278,15 +279,17 @@ export default function Home() {
         </div>
       </div>
       <div className="flex justify-center mt-12">
-        <a href="#" className="w-96 button button-outline">
+        <a href="#" className="w-64 button button-outline">
           SEE SONGS LIST
         </a>
         <a
           href="#"
-          className="w-96 flex items-center ml-4 p-2 button button-solid"
+          className="w-64 flex items-center ml-4 p-2 button button-solid"
         >
-          START FOR FREE
-          <i className="bi bi-arrow-right arrow ml-2"></i>
+          <p className="flex justify-center items-center text-center mb-0">
+            START FOR FREE
+            <FaArrowRightLong className="ml-2 transition-transform hover:translate-x-2" />
+          </p>
         </a>
       </div>
       <p className="note">Songs included with Pianote+</p>
