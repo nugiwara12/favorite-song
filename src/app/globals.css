@@ -55,19 +55,19 @@ body {
   }
 
   .text-header {
-    font-family: var(--font-tight);
-    font-weight: var(--font-weight-600);
+    font-family: var(--normal);
+    font-weight: var(--font-weight-700);
     z-index: var(--z-10);
     line-height: var(--leading-none);
     font-size: var(--text-3xl);
     line-height: var(--leading-snug);
 
     @media (min-width: 1024px) {
-      font-size: var(--text-5xl);
+      font-size: var(--text-3xl);
     }
 
     @media (min-width: 1280px) {
-      font-size: var(--text-6xl);
+      font-size: var(--text-3xl);
       line-height: var(--leading-80px);
     }
   }
@@ -76,7 +76,7 @@ body {
     font-family: var(--font-sans);
     font-weight: var(--font-weight-400);
     z-index: var(--z-10);
-    font-size: var(--text-lg);
+    font-size: var(--text-3xl);
     line-height: var(--leading-snug);
 
     @media (min-width: 1024px) {
@@ -84,7 +84,7 @@ body {
     }
 
     @media (min-width: 1280px) {
-      font-size: var(--text-2xl);
+      font-size: var(--text-3xl);
       line-height: var(--leading-relaxed);
     }
   }
