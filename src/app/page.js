@@ -250,27 +250,29 @@ export default function Home() {
                 </div>
               </a>
             </div>
-            <div className="color-element w-full md:w-96 text-white flex justify-end items-end ml-4 mt-6 md:mt-0">
-              <div className="flex flex-col md:flex-row items-center justify-center gap-4 p-4">
-                <div className="relative rounded-l-xl overflow-hidden py-10 px-4 max-w-xs sm:max-w-full">
-                  <video id="videoPlayer" width="100%" autoPlay muted loop>
-                    <source
-                      id="videoSource"
-                      src="./playlist-video/playlist.mp4"
-                      type="video/mp4"
-                      className="w-full hidden media-toggle rounded-l-xl overflow-hidden"
-                    />
-                  </video>
-                  <Image
-                    id="imageElement"
-                    src="/playlist-video/image/desktop.png"
-                    width={490}
-                    height={276}
-                    alt="Media Display"
-                    className="media-toggle hidden rounded-l-xl overflow-hidden"
-                  />
-                </div>
-              </div>
+            <div className="w-full md:w-96 text-white flex justify-end items-end ml-4 mt-6 md:mt-0 pl-0 pt-0 pb-0 md:pl-12 md:pt-12 md:pb-12 bg-gray-800 rounded-lg">
+              <video
+                id="videoPlayer"
+                className="w-full h-full"
+                autoPlay
+                muted
+                loop
+              >
+                <source
+                  id="videoSource"
+                  src="./playlist-video/playlist.mp4"
+                  type="video/mp4"
+                  className="w-full hidden media-toggle rounded-l-xl overflow-hidden"
+                />
+              </video>
+              <Image
+                id="imageElement"
+                src="/playlist-video/image/desktop.png"
+                width={490}
+                height={276}
+                alt="Media Display"
+                className="media-toggle hidden rounded-l-xl overflow-hidden"
+              />
             </div>
           </div>
         </div>
