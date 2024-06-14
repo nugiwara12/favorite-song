@@ -1,6 +1,55 @@
+"use client";
+
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [activeButton, setActiveButton] = useState("description");
+  const [imageSrc, setImageSrc] = useState("");
+
+  useEffect(() => {
+    openDescription(
+      "../playlist-video/playlist.mp4",
+      true,
+      "description",
+      "anotherDescription",
+      "troubleSpotId",
+      "timingId",
+      "desktopId"
+    );
+  }, []);
+
+  const openDescription = (mediaSrc, isVideo, descriptionId, ...otherIds) => {
+    const videoPlayer = document.getElementById("videoPlayer");
+    const videoSource = document.getElementById("videoSource");
+    const imageElement = document.getElementById("imageElement");
+
+    if (isVideo) {
+      videoSource.src = mediaSrc;
+      videoPlayer.load();
+      videoPlayer.classList.remove("hidden");
+      imageElement.classList.add("hidden");
+    } else {
+      setImageSrc(mediaSrc);
+      videoPlayer.classList.add("hidden");
+      imageElement.classList.remove("hidden");
+    }
+
+    document.getElementById(descriptionId).classList.remove("hidden");
+    document.getElementById(descriptionId).classList.add("block");
+    otherIds.forEach((id) => {
+      document.getElementById(id).classList.add("hidden");
+      document.getElementById(id).classList.remove("block");
+    });
+  };
+
+  const handleButtonClick = (mediaSrc, isVideo, descriptionId, ...otherIds) => {
+    return () => {
+      openDescription(mediaSrc, isVideo, descriptionId, ...otherIds);
+      setActiveButton(descriptionId);
+    };
+  };
+
   return (
     <div className="container mx-auto text-white px-4 py-16">
       <h1 className="text-header font-bold mb-4 text-center">
@@ -21,13 +70,23 @@ export default function Home() {
             <div className="space-y-6">
               <a
                 href="#"
-                className="flex items-start space-x-4 bg-element rounded-lg p-4 active-button"
-                onclick="openDescription('../playlist-video/playlist.mp4', 'description', 'anotherDescription', 'troubleSpotId', 'timingId', 'desktopId'); setActiveButton('showDescriptionButton');"
+                className={`flex items-start space-x-4 bg-element rounded-lg p-4 ${
+                  activeButton === "description" ? "active-button" : ""
+                }`}
+                onClick={handleButtonClick(
+                  "../playlist-video/playlist.mp4",
+                  true,
+                  "description",
+                  "anotherDescription",
+                  "troubleSpotId",
+                  "timingId",
+                  "desktopId"
+                )}
                 id="showDescriptionButton"
               >
                 <div className="text-red-500 text-2xl flex-shrink-0 w-7">
                   <Image
-                    src="./icons/music.svg"
+                    src="/icons/music.svg"
                     width={50}
                     height={50}
                     alt="playlist"
@@ -36,7 +95,7 @@ export default function Home() {
                 <div className="flex flex-col flex-grow">
                   <h2 className="text-xl font-bold">500+ popular songs.</h2>
                   <p
-                    className="description mx-0 mt-1 sm:mt-2 text-sm overflow-hidden max-h-0 hidden"
+                    className="description mx-0 mt-1 sm:mt-2 text-sm"
                     id="description"
                   >
                     Get note-for-note song breakdowns for every style, era, and
@@ -47,13 +106,23 @@ export default function Home() {
 
               <a
                 href="#"
-                className="flex items-start space-x-4 rounded-lg p-4"
-                onclick="openDescription('../playlist-video/tempo.mp4', 'anotherDescription', 'description', 'troubleSpotId', 'timingId', 'desktopId'); setActiveButton('showAnotherDescriptionButton');"
+                className={`flex items-start space-x-4 rounded-lg p-4 ${
+                  activeButton === "anotherDescription" ? "active-button" : ""
+                }`}
+                onClick={handleButtonClick(
+                  "../playlist-video/tempo.mp4",
+                  true,
+                  "anotherDescription",
+                  "description",
+                  "troubleSpotId",
+                  "timingId",
+                  "desktopId"
+                )}
                 id="showAnotherDescriptionButton"
               >
                 <div className="text-red-500 text-2xl flex-shrink-0 w-7">
                   <Image
-                    src="./icons/tempo.svg"
+                    src="/icons/tempo.svg"
                     width={50}
                     height={50}
                     alt="Perfect Tempo"
@@ -62,7 +131,7 @@ export default function Home() {
                 <div className="flex flex-col flex-grow">
                   <h2 className="text-xl font-bold">Find the perfect tempo.</h2>
                   <p
-                    className="description hidden mx-0 mt-1 sm:mt-2 text-sm overflow-hidden max-h-0"
+                    className="description hidden mx-0 mt-1 sm:mt-2 text-sm"
                     id="anotherDescription"
                   >
                     Slow down any section of a song to make those tricky bars
@@ -73,22 +142,32 @@ export default function Home() {
 
               <a
                 href="#"
-                className="flex items-start space-x-4 rounded-lg p-4"
-                onclick="openDescription('../playlist-video/troublespot.mp4', 'troubleSpotId', 'description', 'anotherDescription', 'timingId', 'desktopId'); setActiveButton('showTroubleSpotIdButton');"
+                className={`flex items-start space-x-4 rounded-lg p-4 ${
+                  activeButton === "troubleSpotId" ? "active-button" : ""
+                }`}
+                onClick={handleButtonClick(
+                  "../playlist-video/troublespot.mp4",
+                  true,
+                  "troubleSpotId",
+                  "description",
+                  "anotherDescription",
+                  "timingId",
+                  "desktopId"
+                )}
                 id="showTroubleSpotIdButton"
               >
                 <div className="text-red-500 text-2xl flex-shrink-0 w-7">
                   <Image
-                    src="./icons/troublespot.svg"
+                    src="/icons/troublespot.svg"
                     width={50}
                     height={50}
-                    alt="Perfect Tempo"
+                    alt="Trouble Spot"
                   />
                 </div>
                 <div className="flex flex-col flex-grow">
                   <h2 className="text-xl font-bold">Loop the trouble spots.</h2>
                   <p
-                    className="description hidden mx-0 mt-1 sm:mt-2 text-sm overflow-hidden max-h-0"
+                    className="description hidden mx-0 mt-1 sm:mt-2 text-sm"
                     id="troubleSpotId"
                   >
                     Create practice loops to play-through those difficult parts
@@ -99,22 +178,32 @@ export default function Home() {
 
               <a
                 href="#"
-                className="flex items-start space-x-4 rounded-lg p-4"
-                onclick="openDescription('../playlist-video/timing.mp4', 'timingId', 'description', 'anotherDescription', 'troubleSpotId', 'desktopId'); setActiveButton('showTimingIdButton');"
+                className={`flex items-start space-x-4 rounded-lg p-4 ${
+                  activeButton === "timingId" ? "active-button" : ""
+                }`}
+                onClick={handleButtonClick(
+                  "../playlist-video/timing.mp4",
+                  true,
+                  "timingId",
+                  "description",
+                  "anotherDescription",
+                  "troubleSpotId",
+                  "desktopId"
+                )}
                 id="showTimingIdButton"
               >
                 <div className="text-red-500 text-2xl flex-shrink-0 w-7">
                   <Image
-                    src="./icons/timing.svg"
+                    src="/icons/timing.svg"
                     width={50}
                     height={50}
-                    alt="Perfect Tempo"
+                    alt="Timing"
                   />
                 </div>
                 <div className="flex flex-col flex-grow">
                   <h2 className="text-xl font-bold">Improve your timing.</h2>
                   <p
-                    className="description hidden mx-0 mt-1 sm:mt-2 text-sm overflow-hidden max-h-0"
+                    className="description hidden mx-0 mt-1 sm:mt-2 text-sm"
                     id="timingId"
                   >
                     Use the built-in metronome – your new best friend for
@@ -125,12 +214,23 @@ export default function Home() {
 
               <a
                 href="#"
-                className="flex items-start space-x-4 rounded-lg p-4"
+                className={`flex items-start space-x-4 rounded-lg p-4 ${
+                  activeButton === "desktopId" ? "active-button" : ""
+                }`}
+                onClick={handleButtonClick(
+                  "/icons/desktop.svg",
+                  false,
+                  "desktopId",
+                  "description",
+                  "anotherDescription",
+                  "troubleSpotId",
+                  "timingId"
+                )}
                 id="showDesktopIdButton"
               >
                 <div className="text-red-500 text-2xl flex-shrink-0">
                   <Image
-                    src="./icons/desktop.svg"
+                    src="/icons/desktop.svg"
                     width={50}
                     height={50}
                     alt="Desktop Access"
@@ -141,7 +241,7 @@ export default function Home() {
                     Take your songs anywhere.
                   </h2>
                   <p
-                    className="description hidden mx-0 mt-1 sm:mt-2 text-sm overflow-hidden max-h-0"
+                    className="description hidden mx-0 mt-1 sm:mt-2 text-sm"
                     id="desktopId"
                   >
                     Accessible on any device, or printable, so you can play any
@@ -163,9 +263,9 @@ export default function Home() {
                   </video>
                   <Image
                     id="imageElement"
-                    src=""
-                    width={100}
-                    height={100}
+                    src="/playlist-video/image/desktop.png"
+                    width={490}
+                    height={276}
                     alt="Media Display"
                     className="media-toggle hidden rounded-l-xl overflow-hidden"
                   />
@@ -181,7 +281,7 @@ export default function Home() {
         </a>
         <a
           href="#"
-          className="w-96 flex items-center ml-4 p-2 button button-solid "
+          className="w-96 flex items-center ml-4 p-2 button button-solid"
         >
           START FOR FREE
           <i className="bi bi-arrow-right arrow ml-2"></i>
