@@ -6,6 +6,29 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --background: #0c1524;
+  --background-color: #1b2434;
+
+  --font-tight: "var(--font-weight-600)";
+  --font-sans: "var(--font-weight-600)";
+  --font-weight-600: 600;
+  --font-weight-400: 400;
+  --font-weight-700: 700;
+  --leading-none: 1;
+  --leading-snug: 1.375;
+  --leading-relaxed: 1.625;
+  --leading-80px: 80px;
+  --text-6xl: 4rem;
+  --text-5xl: 3rem;
+  --text-3xl: 1.875rem;
+  --text-2xl: 1.5rem;
+  --text-lg: 1.125rem;
+  --text-16px: 16px;
+  --z-10: 10;
+  --px-6: 1.5rem;
+  --py-2: 0.5rem;
+  --rounded: 0.25rem;
+  --transition-colors: color 300ms;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,16 +41,114 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--background);
+}
+
+.color-element {
+  color: rgb(var(--foreground-rgb));
+  background-color: var(--background-color);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
+  .text-header {
+    font-family: var(--font-tight);
+    font-weight: var(--font-weight-600);
+    z-index: var(--z-10);
+    line-height: var(--leading-none);
+    font-size: var(--text-3xl);
+    line-height: var(--leading-snug);
+
+    @media (min-width: 1024px) {
+      font-size: var(--text-5xl);
+    }
+
+    @media (min-width: 1280px) {
+      font-size: var(--text-6xl);
+      line-height: var(--leading-80px);
+    }
+  }
+
+  .text-header-2 {
+    font-family: var(--font-sans);
+    font-weight: var(--font-weight-400);
+    z-index: var(--z-10);
+    font-size: var(--text-lg);
+    line-height: var(--leading-snug);
+
+    @media (min-width: 1024px) {
+      line-height: var(--leading-none);
+    }
+
+    @media (min-width: 1280px) {
+      font-size: var(--text-2xl);
+      line-height: var(--leading-relaxed);
+    }
+  }
+
+  .button-text {
+    font-family: var(--font-tight);
+    font-size: var(--text-16px);
+    font-weight: var(--font-weight-700);
+    padding-left: var(--px-6);
+    padding-right: var(--px-6);
+    padding-top: var(--py-2);
+    padding-bottom: var(--py-2);
+    border-radius: var(--rounded);
+    transition: var(--transition-colors);
+  }
+}
+
+.active-button {
+  border: 2px solid red;
+  background-color: var(--background-color);
+}
+
+/* Custom classes for the buttons */
+.button {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-align: center;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.button-outline {
+  color: white;
+  border: 1px solid white;
+  background: transparent;
+}
+
+.button-outline:hover {
+  background-color: white;
+  color: black;
+}
+
+.button-solid {
+  color: white;
+  background-color: #ff3d3d;
+}
+
+.button-solid:hover {
+  background-color: #cc3232;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 5px #ff3d3d;
+}
+
+.note {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: #9aa0a6;
+  margin-top: 10px;
 }
