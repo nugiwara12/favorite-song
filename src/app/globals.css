@@ -45,9 +45,20 @@ body {
 }
 
 .color-element {
-  height: 25rem;
   color: rgb(var(--foreground-rgb));
   background-color: var(--background-color);
+}
+
+@media (max-width: 768px) {
+  .color-element {
+    height: 16rem; /* Adjust height for tablet devices */
+  }
+}
+
+@media (max-width: 480px) {
+  .color-element {
+    height: 12rem; /* Adjust height for mobile devices */
+  }
 }
 
 @layer utilities {
