@@ -45,6 +45,7 @@ body {
 }
 
 .color-element {
+  height: 25rem;
   color: rgb(var(--foreground-rgb));
   background-color: var(--background-color);
 }
