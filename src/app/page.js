@@ -84,7 +84,7 @@ export default function Home() {
                 )}
                 id="showDescriptionButton"
               >
-                <div className="text-red-500 text-2xl flex-shrink-0 w-7">
+                <div className="text-red-500 text-lg flex-shrink-0 w-6">
                   <Image
                     src="/icons/music.svg"
                     width={50}
@@ -93,7 +93,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col flex-grow">
-                  <h2 className="text-xl font-bold">500+ popular songs.</h2>
+                  <h2 className="text-sm font-bold">500+ popular songs.</h2>
                   <p
                     className="description mx-0 mt-1 sm:mt-2 text-sm"
                     id="description"
@@ -120,7 +120,7 @@ export default function Home() {
                 )}
                 id="showAnotherDescriptionButton"
               >
-                <div className="text-red-500 text-2xl flex-shrink-0 w-7">
+                <div className="text-red-500 text-2xl flex-shrink-0 w-6">
                   <Image
                     src="/icons/tempo.svg"
                     width={50}
@@ -129,7 +129,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col flex-grow">
-                  <h2 className="text-xl font-bold">Find the perfect tempo.</h2>
+                  <h2 className="text-sm font-bold">Find the perfect tempo.</h2>
                   <p
                     className="description hidden mx-0 mt-1 sm:mt-2 text-sm"
                     id="anotherDescription"
@@ -156,7 +156,7 @@ export default function Home() {
                 )}
                 id="showTroubleSpotIdButton"
               >
-                <div className="text-red-500 text-2xl flex-shrink-0 w-7">
+                <div className="text-red-500 text-2xl flex-shrink-0 w-6">
                   <Image
                     src="/icons/troublespot.svg"
                     width={50}
@@ -165,7 +165,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col flex-grow">
-                  <h2 className="text-xl font-bold">Loop the trouble spots.</h2>
+                  <h2 className="text-sm font-bold">Loop the trouble spots.</h2>
                   <p
                     className="description hidden mx-0 mt-1 sm:mt-2 text-sm"
                     id="troubleSpotId"
@@ -192,7 +192,7 @@ export default function Home() {
                 )}
                 id="showTimingIdButton"
               >
-                <div className="text-red-500 text-2xl flex-shrink-0 w-7">
+                <div className="text-red-500 text-2xl flex-shrink-0 w-6">
                   <Image
                     src="/icons/timing.svg"
                     width={50}
@@ -201,7 +201,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col flex-grow">
-                  <h2 className="text-xl font-bold">Improve your timing.</h2>
+                  <h2 className="text-sm font-bold">Improve your timing.</h2>
                   <p
                     className="description hidden mx-0 mt-1 sm:mt-2 text-sm"
                     id="timingId"
@@ -228,7 +228,7 @@ export default function Home() {
                 )}
                 id="showDesktopIdButton"
               >
-                <div className="text-red-500 text-2xl flex-shrink-0">
+                <div className="text-red-500 text-2xl flex-shrink-0 w-6">
                   <Image
                     src="/icons/desktop.svg"
                     width={50}
@@ -237,7 +237,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col flex-grow">
-                  <h2 className="text-xl font-bold">
+                  <h2 className="text-sm font-bold">
                     Take your songs anywhere.
                   </h2>
                   <p
