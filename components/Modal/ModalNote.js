@@ -5,13 +5,13 @@ import abcjs from "abcjs";
 const ModalNote = ({ isVisible, onClose }) => {
   const modalContentRef = useRef(null);
 
-  if (!isVisible) return null;
-
   const handleClose = () => {
     onClose();
   };
 
   useEffect(() => {
+    if (!isVisible) return;
+
     const musicNotation = `
       X:1
       T:Transcribed Music
@@ -39,7 +39,9 @@ const ModalNote = ({ isVisible, onClose }) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [isVisible]);
+
+  if (!isVisible) return null;
 
   return (
     <div className="fixed inset-0 text-black flex justify-center items-center">
