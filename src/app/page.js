@@ -303,7 +303,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row justify-center mt-12 space-y-4 md:space-y-0 md:space-x-4">
           <a
             href="#"
-            className="flex justify-center items-center w-full md:w-64 mx-5 my-5 md:my-0 px-10 py-2 rounded-full text-white border border-white hover:bg-white hover:text-black transition duration-300 ease-in-out text-center"
+            className="flex justify-center items-center w-full md:w-64 my-5 md:my-0 px-10 py-2 rounded-full text-white border border-white hover:bg-white hover:text-black transition duration-300 ease-in-out text-center"
           >
             SEE SONGS LIST
           </a>
