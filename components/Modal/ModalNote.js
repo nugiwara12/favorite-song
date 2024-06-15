@@ -47,13 +47,12 @@ const ModalNote = ({ isVisible, onClose }) => {
     <div className="fixed inset-0 text-black flex justify-center items-center">
       <div
         ref={modalContentRef}
-        className="h-3/4 w-3/4 bg-white backdrop-blur-sm relative"
+        className="h-full w-full md:h-3/4 md:w-3/4 bg-white backdrop-blur-sm relative p-4 md:p-0 flex flex-col md:flex-row"
       >
         {/* Video Player */}
-        <div className="absolute left-0 w-1/3 h-full bg-white flex justify-center items-center">
+        <div className="w-full md:w-1/3 h-1/2 md:h-full bg-white flex justify-center items-center relative">
           <iframe
-            width="500"
-            height="505"
+            className="w-full h-full"
             src="https://www.youtube.com/embed/hLQl3WQQoQ0?autoplay=1"
             title="YouTube video player"
             frameBorder="0"
@@ -63,16 +62,22 @@ const ModalNote = ({ isVisible, onClose }) => {
         </div>
 
         {/* Music Notes */}
-        <div className="absolute right-0 w-1/2 h-full p-4">
+        <div className="w-full md:w-2/3 h-1/2 md:h-full p-4 flex flex-col justify-center items-center">
           <div
-            className="h-full flex flex-col justify-center items-center"
+            className="h-full w-full flex flex-col justify-center items-center"
             id="music-notation"
           ></div>
         </div>
 
         {/* Close Button */}
         <button
-          className="absolute top-4 right-4 text-gray-700 hover:text-gray-900"
+          className="absolute top-4 right-4 text-gray-700 hover:text-gray-900 md:hidden"
+          onClick={handleClose}
+        >
+          <IoCloseSharp className="text-3xl" />
+        </button>
+        <button
+          className="hidden md:block absolute top-4 right-4 text-gray-700 hover:text-gray-900"
           onClick={handleClose}
         >
           <IoCloseSharp className="text-3xl" />
