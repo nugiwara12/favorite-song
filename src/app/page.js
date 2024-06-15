@@ -300,21 +300,27 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex justify-center mt-12">
-          <a href="#" className="w-64 button button-outline">
+        <div className="flex flex-col md:flex-row justify-center mt-12 space-y-4 md:space-y-0 md:space-x-4">
+          <a
+            href="#"
+            className="w-full md:w-64 inline-block mx-5 my-5 md:my-0 px-10 py-2 rounded-full text-white border border-white hover:bg-white hover:text-black transition duration-300 ease-in-out text-center"
+          >
             SEE SONGS LIST
           </a>
           <a
             href="#"
-            className="w-64 flex items-center ml-4 p-2 button button-solid"
+            className="w-full md:w-64 flex justify-center items-center p-2 text-white bg-red-600 hover:bg-red-500 transition duration-300 ease-in-out rounded-full font-bold text-center"
           >
             <p className="flex justify-center items-center text-center mb-0">
               START FOR FREE
-              <FaArrowRightLong className="ml-2 transition-transform hover:translate-x-2" />
+              <FaArrowRightLong className="ml-1 transition duration-300 ease-in-out hover:translate-x-2" />
             </p>
           </a>
         </div>
-        <p className="note">Songs included with Pianote+</p>
+
+        <p className="mt-4 text-center font-sans text-xs text-gray-500">
+          Songs included with Pianote+
+        </p>
         <div className="flex justify-center items-center mx-auto text-white px-4 py-16">
           {/* Rest of your code */}
           {showModal && (
