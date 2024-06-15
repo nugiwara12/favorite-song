@@ -109,29 +109,6 @@ body {
 }
 
 /* Custom classes for the buttons */
-.button {
-  display: inline-block;
-  margin: 5px;
-  padding: 10px 20px;
-  border-radius: 25px;
-  text-align: center;
-  text-decoration: none;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.button-outline {
-  color: white;
-  border: 1px solid white;
-  background: transparent;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.button-outline:hover {
-  background-color: white;
-  color: black;
-}
 
 .button-solid {
   color: white;
@@ -145,12 +122,4 @@ body {
 .button:focus {
   outline: none;
   box-shadow: 0 0 5px #ff3d3d;
-}
-
-.note {
-  text-align: center;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  color: #9aa0a6;
-  margin-top: 10px;
 }
