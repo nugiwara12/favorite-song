@@ -50,7 +50,7 @@ const ModalNote = ({ isVisible, onClose }) => {
         className="h-full w-full md:h-3/4 md:w-3/4 bg-white backdrop-blur-sm relative p-4 md:p-0 flex flex-col md:flex-row"
       >
         {/* Video Player */}
-        <div className="w-full md:w-1/3 h-1/2 md:h-full bg-white flex justify-center items-center relative">
+        <div className="w-full md:w-1/2 h-1/3 md:h-full bg-white flex justify-center items-center relative">
           <iframe
             className="w-full h-full"
             src="https://www.youtube.com/embed/hLQl3WQQoQ0?autoplay=1"
@@ -60,9 +60,7 @@ const ModalNote = ({ isVisible, onClose }) => {
             allowFullScreen
           ></iframe>
         </div>
-
-        {/* Music Notes */}
-        <div className="w-full md:w-2/3 h-1/2 md:h-full p-4 flex flex-col justify-center items-center">
+        <div className="w-full md:w-1/2 h-2/3 md:h-full p-4 flex flex-col justify-center items-center">
           <div
             className="h-full w-full flex flex-col justify-center items-center"
             id="music-notation"
